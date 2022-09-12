@@ -4,20 +4,24 @@ using Xamarin.Forms;
 using YoutubeInWebView.Dtos.Api.Search;
 using YoutubeInWebView.Services;
 using YoutubeInWebView.UI.ViewModels;
+using YoutubeInWebView.UI.Controls;
 
 namespace YoutubeInWebView
 {
     public partial class MainPage : ContentPage
     {
         private SearchResponseDto _searchResponse;
+        private PlayerState _state;
 
         public MainPage()
         {
-            InitializeComponent();
-
+            InitializeComponent();r
             PlayButton.Clicked += PlayButton_Clicked;
             PauseButton.Clicked += PauseButton_Clicked;
             StopButton.Clicked += StopButton_Clicked;
+            PlayButton.Clicked += PlayPause;
+            NextButton.Clicked += NextButton_Clicked;
+            PreviousButton.Clicked += PreviousButton_Clicked;
 
             SearchButton.Clicked += SearchButton_Clicked;
             PresetsList.ItemSelected += PresetsList_ItemSelected;
@@ -26,21 +30,22 @@ namespace YoutubeInWebView
             var videos = repo.GetVideos();
             TimelineView.Init(videos.ToList(), YtPlayerWebview);
 
+            YtPlayerWebview.OnPlayerStateChange += YoutubeWebView_OnPlayerStateChange;
         }
 
-        private void PlayButton_Clicked(object sender, EventArgs e)
+        private void PreviousButton_Clicked(object sender, EventArgs e)
         {
-            YtPlayerWebview.PlayVideo();
+            TimelineView.Previous();
         }
 
-        private void PauseButton_Clicked(object sender, EventArgs e)
+        private void NextButton_Clicked(object sender, EventArgs e)
         {
-            YtPlayerWebview.PauseVideo();
+            TimelineView.Next();
         }
 
-        private void StopButton_Clicked(object sender, EventArgs e)
+        private void YoutubeWebView_OnPlayerStateChange(object sender, PlayerState playerState)
         {
-            YtPlayerWebview.StopVideo();
+            _state = playerState;
         }
 
         private async void SearchButton_Clicked(object sender, EventArgs e)
@@ -90,6 +95,12 @@ namespace YoutubeInWebView
                     EndSeconds = (float)video.Stop.TotalSeconds,
                 });
             }
+        public void PlayPause(object sender, EventArgs e)
+        {
+            if (_state == PlayerState.PAUSED)
+                YtPlayerWebview.PlayVideo();
+            if (_state == PlayerState.PLAYING)
+                YtPlayerWebview.PauseVideo();
         }
     }
 }

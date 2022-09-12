@@ -135,5 +135,21 @@ namespace YoutubeInWebView.UI.Controls.SegmentedTimeline.ViewModels
                     LoadVideo(currentVideo, _currentTime));
             }
         }
+        
+        private void PlayPrevious()
+        {
+            if (_currentIndex > 0)
+            {
+                var currentVideo = _videos[--_currentIndex];
+                _currentTime = (float)currentVideo.Start.TotalSeconds;
+                MainThread.BeginInvokeOnMainThread(() =>
+                    LoadVideo(currentVideo, _currentTime));
+            }
+        }
+
+        //TODO: Ееще одни методы
+        public void Next() => PlayNext();
+
+        public void Previous() => PlayPrevious();
     }
 }

@@ -79,6 +79,12 @@ namespace YoutubeInWebView.UI.Controls
             }
         }
 
+        //TODO: Новые методы
+        public void Previous() => ViewModel.Previous();
+
+        public void Next() => ViewModel.Next();
+
+
         private void OnPositionChanged(object sender, float relativePosition)
         {
             if (ViewModel.CurrentIndex != 0 && relativePosition < 0.001)

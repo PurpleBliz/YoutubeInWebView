@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:YoutubeInWebView.UI.Controls"
-             x:Class="YoutubeInWebView.MainPage">
+             x:Class="YoutubeInWebView.MainPage"
+             BackgroundColor="Black">
 
     <StackLayout>
-        <controls:YoutubeWebView x:Name="YtPlayerWebview" YoutubeVideoId="junBvKGZCDc" WidthRequest="400" HeightRequest="600" HorizontalOptions="Start"></controls:YoutubeWebView>
+        <controls:YoutubeWebView x:Name="YtPlayerWebview"  YoutubeVideoId="junBvKGZCDc" WidthRequest="400" HeightRequest="200" HorizontalOptions="Start"></controls:YoutubeWebView>
         <controls:SegmentedTimelineView x:Name="TimelineView"></controls:SegmentedTimelineView>
         <ScrollView>
             <StackLayout>
@@ -32,6 +33,11 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Button Text="Play/Pause" x:Name="PlayButton" />
+                <Button Text="Next" x:Name="NextButton" />
+                <Button Text="Previous" x:Name="PreviousButton" />
+                <!--<Button Text="Stop" x:Name="StopButton" />-->
+                <!--<Button Text="ChangeSize" x:Name="ChangeSizeButton" />-->
             </StackLayout>
         </ScrollView>
     </StackLayout>
