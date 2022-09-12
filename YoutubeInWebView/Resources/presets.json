@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "ext_id": "odDsrauLDQB",
+      "preset_id": "odDsrauLDQB",
+      "title": "Game of thrones best moments",
+      "description": null,
+      "progress": null,
+      "group": "basic",
+      "segments": [
+        {
+          "title": "title",
+          "video_source": {
+            "type": "youtube",
+            "id": "g2p6_wbvJSE",
+            "start_ts": 158.5,
+            "stop_ts": 178.2,
+            "thumbnails": {
+              "default": {
+                "url": "https://i.ytimg.com/vi/g2p6_wbvJSE/sddefault.jpg"
+              },
+              "animated": {
+                "url": "https://api2.comexp.net/demo/storage/g2p6_wbvJSE/animated.webp"
+              },
+              "storyboard": {
+                "url": "https://api2.comexp.net/demo/storage/g2p6_wbvJSE/%05d.jpg"
+              }
+            }
+          },
+          "filmlibrary_source": null,
+          "references": [
+            {
+              "category": "video_service",
+              "provider": "yotube",
+              "id": "g2p6_wbvJSE",
+              "start_ts": 158.5,
+              "stop_ts": 178.2,
+              "title": "SUPERCUT - The Best Fight Scenes in Game of Thrones",
+              "url": "https://www.youtube.com/watch?v=g2p6_wbvJSE?t=158.5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -11,10 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\presets.json" />
     <None Remove="Resources\response-segments.json" />
+    <None Remove="Resources\search-response.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\search-response.json" />
+    <EmbeddedResource Include="Resources\presets.json" />
     <EmbeddedResource Include="Resources\response-segments.json" />
   </ItemGroup>
 

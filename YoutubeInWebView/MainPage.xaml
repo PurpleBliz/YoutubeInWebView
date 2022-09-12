@@ -10,6 +10,29 @@
         <controls:SegmentedTimelineView x:Name="TimelineView"></controls:SegmentedTimelineView>
         <ScrollView>
             <StackLayout>
+                
+                <Button Text="Play" x:Name="PlayButton" />
+                <Button Text="Pause" x:Name="PauseButton" />
+                <Button Text="Stop" x:Name="StopButton" />
+                
+                <Button Text="Search" x:Name="SearchButton" />
+                <ListView x:Name="PresetsList" RowHeight="150" HeightRequest="400">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Label Text="{Binding Title}" Grid.Row="0" />
+                                    <Image Source="{Binding PreviewImageFromUrl}" Grid.Row="1" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <Button Text="Play/Pause" x:Name="PlayButton" />
                 <Button Text="Next" x:Name="NextButton" />
                 <Button Text="Previous" x:Name="PreviousButton" />

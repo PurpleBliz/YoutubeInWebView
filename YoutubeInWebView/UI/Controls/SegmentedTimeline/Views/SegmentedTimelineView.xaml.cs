@@ -25,6 +25,7 @@ namespace YoutubeInWebView.UI.Controls
 
         private List<TimelineFragment> _fragments;
         private bool _isDisposed;
+        private bool _forceUpdateFragments = false;
 
         private DateTime _lastTouchDateTime;
 
@@ -42,6 +43,16 @@ namespace YoutubeInWebView.UI.Controls
             BindingContext = ViewModel;
 
             Canvas.InvalidateSurface();
+        }
+
+        public void Reinit(IReadOnlyList<VideoDto> videos, YoutubeWebView youtubeWebView)
+        {
+            if (ViewModel != null)
+                ViewModel.PositionChanged -= OnPositionChanged;
+
+            _forceUpdateFragments = true;
+
+            Init(videos, youtubeWebView);
         }
 
         private SegmentedTimelineViewModel ViewModel { get; set; }
@@ -141,8 +152,9 @@ namespace YoutubeInWebView.UI.Controls
 
             void UpdateFragments()
             {
-                if ((_fragments != null && _width == width)
-                    || ViewModel.FullDurationS == 0)
+                if (!_forceUpdateFragments
+                    && ((_fragments != null && _width == width)
+                        || ViewModel.FullDurationS == 0))
                     return;
 
                 _fragments = GetFragments(width);

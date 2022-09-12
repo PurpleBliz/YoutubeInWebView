@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using YoutubeInWebView.Dtos;
-using YoutubeInWebView.Dtos.Api;
+using YoutubeInWebView.Dtos.Api.Presets;
 
 namespace YoutubeInWebView.Services
 {
@@ -15,6 +15,13 @@ namespace YoutubeInWebView.Services
         }
 
         public IEnumerable<VideoDto> GetVideos() => _videoDtos;
+
+        public IEnumerable<VideoDto> UpdateVideos(List<SegmentDto> segmentDtos)
+        {
+            var i = 0;
+            _videoDtos = segmentDtos.Select(s => VideoDto.FromSegmentDto(s, i++));
+            return _videoDtos;
+        }
 
         private IEnumerable<VideoDto> LoadVideos()
         {

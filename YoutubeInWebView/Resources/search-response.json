@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "id": 4783,
+      "ext_id": "2epgK6kXCrm",
+      "preset_id": "2epgK6kXCrm",
+      "title": "Automatic Scene Detection",
+      "description": null,
+      "duration": 290,
+      "thumbnails": {
+        "default": {
+          "url": "http://i3.ytimg.com/vi/xhESkMqChk4/hqdefault.jpg"
+        },
+        "animated": {
+          "url": "http://i3.ytimg.com/vi/xhESkMqChk4/hqdefault.jpg"
+        },
+        "imdb": {
+          "url": "https://www.imdb.com/title/tt1375666/"
+        },
+        "kinopoisk": {
+          "url": "https://www.kinopoisk.ru/film/447301/"
+        }
+      },
+      "references": [
+        {
+          "category": "video_service",
+          "count": 0
+        },
+        {
+          "category": "tv",
+          "count": 0
+        },
+        {
+          "category": "filmlibrary",
+          "count": 0
+        },
+        {
+          "category": "presets",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": 4801,
+      "ext_id": "bNoHyFDJ6Uc",
+      "preset_id": "bNoHyFDJ6Uc",
+      "title": "Video search by fragment",
+      "description": null,
+      "duration": 164,
+      "thumbnails": {
+        "default": {
+          "url": "https://api2.comexp.net/demo/storage/fp9dOJ9SAz5/00001.jpg"
+        },
+        "animated": {
+          "url": "https://api2.comexp.net/demo/storage/presets/grDLiPCUCEB/animated.webp"
+        }
+      },
+      "references": [
+        {
+          "category": "video_service",
+          "count": null
+        },
+        {
+          "category": "tv",
+          "count": null
+        },
+        {
+          "category": "filmlibrary",
+          "count": null
+        },
+        {
+          "category": "presets",
+          "count": null
+        }
+      ]
+    },
+    {
+      "id": 4802,
+      "ext_id": "RTQZBDSbIBo",
+      "preset_id": "RTQZBDSbIBo",
+      "title": "Video archive",
+      "description": null,
+      "duration": 58,
+      "thumbnails": {
+        "default": {
+          "url": "https://api2.comexp.net/demo/storage/bDK4rGVFDBR/00001.jpg"
+        },
+        "animated": {
+          "url": "https://api2.comexp.net/demo/storage/presets/pcLUNlpmqmD/animated.webp"
+        }
+      },
+      "references": [
+        {
+          "category": "video_service",
+          "count": 0
+        },
+        {
+          "category": "tv",
+          "count": 201
+        },
+        {
+          "category": "filmlibrary",
+          "count": 0
+        },
+        {
+          "category": "presets",
+          "count": 0
+        }
+      ]
+    }
+  ],
+  "page_info": {
+    "total_results": 3,
+    "results_per_page": 9
+  }
+}

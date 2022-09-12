@@ -10,6 +10,7 @@ namespace YoutubeInWebView
             InitializeComponent();
 
             DependencyService.RegisterSingleton(new VideoRepository());
+            DependencyService.RegisterSingleton<IApiService>(new MockApiService());
 
             MainPage = new MainPage();
         }
